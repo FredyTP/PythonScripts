@@ -2,7 +2,6 @@ from pyqtgraph.Qt import QtGui, QtCore
 import numpy as np
 import pandas as pd
 import pyqtgraph as pg
-from pyqtgraph.ptime import time
 import matplotlib.pyplot as pl
 import re
 import random
@@ -58,6 +57,8 @@ class GraficPlotter:
 
         self.fig=0
         self.plot=0
+        self.x_var = ""
+        self.y_vars = []
 
 
     def setPlotKeys(self,key_list=list):
@@ -101,7 +102,8 @@ class GraficPlotter:
         self.axis=self.fig.add_subplot(1,1,1)
         self.plot=self.fig.add_subplot(1,1,1)
         if(self.title==""):
-            self.plot.set_title(f"{x_var} vs ( {', '.join(y_vars)} )",fontsize=20,verticalalignment="bottom")
+            #self.plot.set_title(f"{x_var} vs ( {', '.join(y_vars)} )",fontsize=20,verticalalignment="bottom")
+            a=1
         else:
             self.plot.set_title(self.title,fontsize=20,verticalalignment="bottom")
         #self.plot.set_xlabel(x_var,fontsize=15)
